@@ -1,10 +1,9 @@
 // User function Template for Java
 class Solution {
     static int swapNibbles(int n) {
-        // code here
-        int a=n%16;
-        int b=n/16;
-        int ans=a*16+b;
-        return ans;
+       
+       int left=(n&0x0F)<<4;
+       int right=(n&0xF0)>>4;
+       return(left|right);
     }
 }
