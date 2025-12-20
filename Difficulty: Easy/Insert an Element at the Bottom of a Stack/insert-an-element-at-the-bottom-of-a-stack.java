@@ -1,15 +1,16 @@
 // User function Template for Java
 class Solution {
     public Stack<Integer> insertAtBottom(Stack<Integer> st, int x) {
-        Stack<Integer> temp = new Stack<> ();
-        while(st.size()>0){
-            temp.push(st.pop());
-            }
-            st.push(x);
-        while(temp.size()>0){
-            st.push(temp.pop());
+        ArrayList<Integer>list=new ArrayList<>();
+       while (!st.isEmpty()) {
+            list.add(st.pop());
+        }
+        st.push(x);
+       for (int i = list.size() - 1; i >= 0; i--) {
+            int element = list.get(i);
+            st.push(element);
+           
         }
         return st;
-        
     }
 }
